@@ -1,0 +1,22 @@
+testCaseId,scenario,firstName,lastName,email,gender,mobile,dob,subjects,hobbies,picture,address,state,city,expectedResult
+TC01,Happy Path - Complete all feild valid data,Apiwit,Engineer,apiwit@example.com,Male,0812345678,16 Feb 2004,Maths|Physics,Sports|Music,test.jpg,Chulalongkorn University,NCR,Delhi,success
+TC02,Happy Path - Complete Only feild mandatory,Apiwit,Engineer,,Male,0812345678,,,,,,,,success
+TC03,Negative - Missing one mandatory feilds (FirstName),,Engineer,,Male,0812345678,,,,,,,,error_mandatory
+TC04,Negative - Missing one mandatory feilds (LastName),Apiwit,,,Male,0812345678,,,,,,,,error_mandatory
+TC05,Negative - Missing one mandatory feilds (Gender),Apiwit,Engineer,,,0812345678,,,,,,,,error_mandatory
+TC06,Negative - Missing one mandatory feilds (Moblie),Apiwit,Engineer,,Male,,,,,,,,,error_mandatory
+TC07,Negative - Missing all mandatory fields,,,,,,,16 Feb 2004,,,,,,error_mandatory
+TC08,BVA - Mobile 9 digits,Apiwit,Engineer,apiwit@example.com,Male,081234567,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_mobile
+TC09,BVA - Mobile 10 digits,Apiwit,Engineer,apiwit@example.com,Male,0812345678,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,success
+TC10,BVA - Mobile 11 digits,Apiwit,Engineer,apiwit@example.com,Male,08123456789,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_mobile
+TC11,EP - Mobile contains alphabets,Apiwit,Engineer,apiwit@example.com,Male,08123abcd4,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_mobile
+TC12,EP - Invalid email format (Not have @),Apiwit,Engineer,hiemail.com,Male,0812345678,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_email
+TC13,EP - Invalid email format (invalid domain),Apiwit,Engineer,sawadeemail@com,Male,0812345678,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_email
+TC14,EP - Invalid email format (Double dot ),Apiwit,Engineer,apiwit@gmail..com,Male,0812345678,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_email
+TC15,Happy Path - Gender Female and PNG upload,Jane,Doe,jane@test.com,Female,0998887776,20 Oct 1998,English|Commerce,Reading,test.png,Pathumwan,Haryana,Karnal,success
+TC16,Happy Path - Gender Other and minimum data,Sam,Smith,,Other,0123456789,01 Jan 2000,,,,,,,success
+TC17,Dynamic Dropdown - Valid State and City,Apiwit,Test,api@test.com,Male,0887776665,15 May 1995,History,Music,test.jpg,Bangkok,Rajasthan,Jaipur,success
+TC18,Invalid Auto-suggest - Subject not in list,Apiwit,Test,api@test.com,Male,0887776665,15 May 1995,Magic,Sports,test.jpg,Bangkok,NCR,Delhi,success
+TC19,Invalid Auto-suggest - State not in list,Apiwit,Test,api@test.com,Male,0887776665,15 May 1995,Maths,Sports,test.jpg,Bangkok,Narnia,,success
+TC20,Invalid Auto-suggest - City not in State,Apiwit,Test,api@test.com,Male,0887776665,15 May 1995,Maths,Sports,test.jpg,Bangkok,NCR,Agra,success
+TC21,Multiple entries - Subjects and Hobbies,Apiwit,Full,full@test.com,Male,0811111111,10 Dec 1990,Accounting|Arts|Biology,Sports|Reading|Music,test.jpg,Bangkok,Uttar Pradesh,Lucknow,success
