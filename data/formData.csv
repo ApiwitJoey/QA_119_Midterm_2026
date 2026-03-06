@@ -20,3 +20,7 @@ TC18,Invalid Auto-suggest - Subject not in list,Apiwit,Test,api@test.com,Male,08
 TC19,Invalid Auto-suggest - State not in list,Apiwit,Test,api@test.com,Male,0887776665,15 May 1995,Maths,Sports,test.jpg,Bangkok,Narnia,,success
 TC20,Invalid Auto-suggest - City not in State,Apiwit,Test,api@test.com,Male,0887776665,15 May 1995,Maths,Sports,test.jpg,Bangkok,NCR,Agra,success
 TC21,Multiple entries - Subjects and Hobbies,Apiwit,Full,full@test.com,Male,0811111111,10 Dec 1990,Accounting|Arts|Biology,Sports|Reading|Music,test.jpg,Bangkok,Uttar Pradesh,Lucknow,success
+TC22,EP - Mobile all alphabets,Apiwit,Engineer,apiwit@example.com,Male,abcdefghij,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_mobile
+TC23,EP - Mobile with special chars,Apiwit,Engineer,apiwit@example.com,Male,08123-5678,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_mobile
+TC24,EP - Email with space in local part,Apiwit,Engineer,api wit@example.com,Male,0812345678,16 Feb 2004,Maths,Sports,test.jpg,Bangkok,NCR,Delhi,error_email
+TC25,Happy Path - Minimal mandatory with Female,Jane,Doe,jane_min@test.com,Female,0987654321,,,,,,NCR,Delhi,success
